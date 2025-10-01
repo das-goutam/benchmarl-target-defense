@@ -1,0 +1,25 @@
+# benchmarl/conf/task/vmas/target_defense_patrol_End2End.yaml
+
+# Core environment parameters
+max_steps: 1000
+
+# Agent-specific parameters
+patroller_sensing_radius: 0.35
+patroller_speed_ratio: 1.0
+pursuer_speed_ratio: 1.0
+attacker_speed_ratio: 0.2
+
+# Environment mechanics
+target_distance: 0.05
+randomize_attacker_x: true
+spawn_area_mode: true
+spawn_area_width: 0.1
+
+# Wall constraints
+enable_wall_constraints: false
+wall_epsilon: 0.03
+
+# Reward and termination - KEY DIFFERENCE
+use_apollonius: true
+terminate_on_detection: false  # Continue learning until capture
+capture_distance: 0.07         # Smaller capture radius

@@ -1,0 +1,29 @@
+# benchmarl/conf/task/vmas/target_defense_patrol_ma.yaml
+
+# Core environment parameters
+max_steps: 1000
+
+# Multi-agent configuration
+num_patrollers: 1
+num_pursuers: 2  # Multiple pursuers for coordination
+num_attackers: 1
+
+# Agent-specific parameters
+patroller_sensing_radius: 0.35
+patroller_speed_ratio: 1.0
+pursuer_speed_ratio: 1.0
+attacker_speed_ratio: 0.3
+
+# Environment mechanics
+target_distance: 0.05
+randomize_attacker_x: true
+spawn_area_mode: true
+spawn_area_width: 0.1
+
+# Wall constraints
+enable_wall_constraints: false
+wall_epsilon: 0.03
+
+# Reward and termination
+use_apollonius: true
+terminate_on_detection: true  # GT-assisted
